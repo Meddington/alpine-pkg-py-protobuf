@@ -11,24 +11,24 @@ dependencies:
     - git fetch --tags
     - go get github.com/tcnksm/ghr
     - mkdir packages
-    - echo -e "$RSA_PUBLIC_KEY" > packages/sgerrand.rsa.pub
+    - echo -e "$RSA_PUBLIC_KEY" > packages/meddington.rsa.pub
   override:
-    - docker run -e RSA_PRIVATE_KEY="$RSA_PRIVATE_KEY" -e RSA_PRIVATE_KEY_NAME="sgerrand.rsa" -v $(pwd):/home/builder/package -v $(pwd)/packages:/home/builder/packages andyshinn/alpine-abuild
+    - docker run -e RSA_PRIVATE_KEY="$RSA_PRIVATE_KEY" -e RSA_PRIVATE_KEY_NAME="meddington.rsa" -v $(pwd):/home/builder/package -v $(pwd)/packages:/home/builder/packages andyshinn/alpine-abuild
 
 test:
   override:
-    - docker run -it -v $(pwd)/packages:/packages gliderlabs/alpine:3.3 sh -c " apk -U add --allow-untrusted --upgrade /packages/builder/x86_64/*.apk"
+    - docker run -it -v $(pwd)/packages:/packages gliderlabs/alpine:3.6 sh -c " apk -U add --allow-untrusted --upgrade /packages/builder/x86_64/*.apk"
 
 deployment:
   release:
     tag: /[0-9]+(\.[0-9]+){1,2}(\-r\d+)?$/
-    owner: sgerrand
+    owner: meddington
     commands:
-      - ghr -u sgerrand $CIRCLE_TAG packages/
-      - ghr -u sgerrand $CIRCLE_TAG packages/builder/x86_64
+      - ghr -u meddington $CIRCLE_TAG packages/
+      - ghr -u meddington $CIRCLE_TAG packages/builder/x86_64
   master:
     branch: master
-    owner: sgerrand
+    owner: meddington
     commands:
-      - ghr -u sgerrand --prerelease --delete unreleased packages || return 0
-      - ghr -u sgerrand --prerelease unreleased packages/builder/x86_64
+      - ghr -u meddington --prerelease --delete unreleased packages || return 0
+      - ghr -u meddington --prerelease unreleased packages/builder/x86_64

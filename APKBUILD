@@ -1,8 +1,8 @@
-# Contributor: Sasha Gerrand <alpine-pkgs@sgerrand.com>
-# Maintainer: Sasha Gerrand <alpine-pkgs@sgerrand.com>
+# Contributor: Michael Eddington <meddington+alpine@gmail.com>
+# Maintainer: Michael Eddington <meddington+alpine@gmail.com>
 pkgname=py-protobuf
 _pkgname=protobuf
-pkgver=2.6.1
+pkgver=3.3.0
 pkgrel=0
 pkgdesc="Protocol Buffers are Google’s data interchange format."
 url="https://pypi.python.org/pypi/protobuf"
@@ -36,6 +36,6 @@ package() {
 	python setup.py install --prefix=/usr --root="$pkgdir" || return 1
 }
 
-md5sums="6bf843912193f70073db7f22e2ea55e2  protobuf-2.6.1.tar.gz"
-sha256sums="8faca1fb462ee1be58d00f5efb4ca4f64bde92187fe61fde32615bbee7b3e745  protobuf-2.6.1.tar.gz"
-sha512sums="c345b5b2822e7142e27cd6ff4ca4e8cc307acd3673043428073ed260a899c48ac6afa32e290b2d2f0ee54316d1a0f0ec72287604fb372992715a2191fe5623d4  protobuf-2.6.1.tar.gz"
+md5sums="27941e8e42e83d5183605054576882dd  protobuf-3.3.0.tar.gz"
+sha256sums="1cbcee2c45773f57cb6de7ee0eceb97f92b9b69c0178305509b162c0160c1f04  protobuf-3.3.0.tar.gz"
+sha512sums="43cca936aa6da55595f1abcb22e698d914b1019a0ab09de972f6d0f3dab635d75f6ea8ad76cdcbf37d861fa33128918ca109ed01ec38545f9ee1ef6cfc7eddcf  protobuf-3.3.0.tar.gz"
