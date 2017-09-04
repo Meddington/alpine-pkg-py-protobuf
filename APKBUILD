@@ -36,6 +36,10 @@ package() {
 	python setup.py install --prefix=/usr --root="$pkgdir" || return 1
 }
 
+check() {
+	return 0
+}
+
 md5sums="27941e8e42e83d5183605054576882dd  protobuf-3.3.0.tar.gz"
 sha256sums="1cbcee2c45773f57cb6de7ee0eceb97f92b9b69c0178305509b162c0160c1f04  protobuf-3.3.0.tar.gz"
 sha512sums="43cca936aa6da55595f1abcb22e698d914b1019a0ab09de972f6d0f3dab635d75f6ea8ad76cdcbf37d861fa33128918ca109ed01ec38545f9ee1ef6cfc7eddcf  protobuf-3.3.0.tar.gz"
