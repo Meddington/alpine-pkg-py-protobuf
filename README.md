@@ -1,6 +1,6 @@
 # alpine-pkg-py-protobuf
 
-[![CircleCI](https://img.shields.io/circleci/project/meddington/alpine-pkg-py-protobuf/master.svg)](https://circleci.com/gh/meddington/alpine-pkg-py-protobuf)
+[![CircleCI](https://img.shields.io/circleci/project/Meddington/alpine-pkg-py-protobuf/master.svg)](https://circleci.com/gh/Meddington/alpine-pkg-py-protobuf)
 
 This is the [Python protobuf][py-protobuf] package as an Alpine Linux package.
 
