@@ -16,7 +16,7 @@ dependencies:
   override:
     - pip install --upgrade pip
     - pip download --no-binary=protobuf protobuf==3.3.0
-    - docker run -e RSA_PRIVATE_KEY="$(cat packages/meddington.rsa)" -e RSA_PRIVATE_KEY_NAME="meddington.rsa" -v $(pwd):/home/builder/package -v $(pwd)/packages:/home/builder/packages andyshinn/alpine-abuild:v4
+    - docker run -e PACKAGER_PRIVKEY=/home/builder/packages/meddington.rsa -v $(pwd):/home/builder/package -v $(pwd)/packages:/home/builder/packages andyshinn/alpine-abuild:v4
 
 test:
   override:
