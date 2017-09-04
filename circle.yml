@@ -13,6 +13,7 @@ dependencies:
     - mkdir packages
     - echo -e "$RSA_PUBLIC_KEY" > packages/meddington.rsa.pub
   override:
+    - pip install --upgrade pip
     - pip download protobuf==3.3.0
     - docker run -e RSA_PRIVATE_KEY="$RSA_PRIVATE_KEY" -e RSA_PRIVATE_KEY_NAME="meddington.rsa" -v $(pwd):/home/builder/package -v $(pwd)/packages:/home/builder/packages andyshinn/alpine-abuild:v4
 
